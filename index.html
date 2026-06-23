@@ -5,27 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f7f8fb" />
   <title>Shravani Mahadeshwar</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #f7f8fb;
       --bg-2: #ffffff;
-      --surface: rgba(255, 255, 255, 0.82);
-      --surface-solid: #ffffff;
+      --surface: rgba(255, 255, 255, 0.9);
       --text: #0f172a;
       --muted: #64748b;
       --line: #e2e8f0;
       --line-strong: #cbd5e1;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
-      --shadow: 0 20px 50px rgba(15, 23, 42, 0.07);
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.04);
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+      --shadow-soft: 0 10px 24px rgba(15, 23, 42, 0.04);
       --max: 1180px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --radius-sm: 14px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
     }
 
     * { box-sizing: border-box; }
@@ -35,8 +35,8 @@
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1200px 600px at 12% -10%, rgba(37, 99, 235, 0.08), transparent 55%),
-        radial-gradient(900px 500px at 92% 2%, rgba(59, 130, 246, 0.05), transparent 48%),
+        radial-gradient(1100px 540px at 10% -8%, rgba(37, 99, 235, 0.08), transparent 55%),
+        radial-gradient(900px 420px at 92% 4%, rgba(37, 99, 235, 0.05), transparent 46%),
         linear-gradient(180deg, #fbfcfe 0%, var(--bg) 100%);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -56,7 +56,7 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(18px);
-      background: rgba(247, 248, 251, 0.78);
+      background: rgba(247, 248, 251, 0.8);
       border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     }
 
@@ -97,14 +97,11 @@
       font-size: 0.94rem;
     }
 
-    .nav-links a {
-      transition: color 160ms ease;
-    }
-
+    .nav-links a { transition: color 160ms ease; }
     .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 88px 0 54px;
+      padding: 88px 0 46px;
     }
 
     .eyebrow {
@@ -114,7 +111,7 @@
       padding: 9px 14px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.76);
       color: var(--muted);
       font-size: 0.9rem;
       font-weight: 600;
@@ -132,8 +129,8 @@
 
     h1 {
       margin: 18px 0 0;
-      font-size: clamp(3.2rem, 7.2vw, 5.9rem);
-      line-height: 0.95;
+      font-size: clamp(3.15rem, 7vw, 5.8rem);
+      line-height: 0.96;
       letter-spacing: -0.07em;
       max-width: 11ch;
     }
@@ -141,7 +138,7 @@
     .subtitle {
       margin: 20px 0 0;
       max-width: 62ch;
-      font-size: clamp(1.04rem, 1.6vw, 1.28rem);
+      font-size: clamp(1.04rem, 1.5vw, 1.2rem);
       color: var(--muted);
       line-height: 1.7;
     }
@@ -165,7 +162,6 @@
       font-weight: 600;
       transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
       border: 1px solid transparent;
-      will-change: transform;
     }
 
     .btn:hover { transform: translateY(-1px); }
@@ -180,7 +176,7 @@
 
     .btn.ghost {
       border-color: var(--line);
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.9);
       color: var(--text);
     }
 
@@ -191,7 +187,7 @@
 
     .stack-card {
       margin-top: 30px;
-      padding: 18px 0 0;
+      padding-top: 18px;
       border-top: 1px solid var(--line);
       color: var(--muted);
       display: grid;
@@ -200,7 +196,7 @@
 
     .stack-label {
       font-size: 0.78rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
@@ -211,15 +207,11 @@
       color: #475569;
     }
 
-    .stack-line strong { color: var(--text); }
-
     .section {
       padding: 34px 0 0;
     }
 
-    .section-head {
-      margin-bottom: 24px;
-    }
+    .section-head { margin-bottom: 24px; }
 
     .section-title {
       margin: 0;
@@ -267,7 +259,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100%;
-      background: var(--surface-solid);
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -290,38 +282,18 @@
     }
 
     .thumb {
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 4 / 3;
       background:
-        linear-gradient(180deg, rgba(239, 246, 255, 0.92) 0%, rgba(248, 250, 252, 0.98) 100%);
+        linear-gradient(180deg, rgba(239, 246, 255, 0.95) 0%, rgba(248, 250, 252, 1) 100%);
       border-bottom: 1px solid var(--line);
-      position: relative;
       overflow: hidden;
     }
 
-    .thumb::before {
-      content: "Project image";
-      position: absolute;
-      inset: auto auto 16px 16px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #64748b;
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(203, 213, 225, 0.9);
-      backdrop-filter: blur(8px);
-    }
-
-    .thumb::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(600px 180px at 80% 0%, rgba(37, 99, 235, 0.1), transparent 55%),
-        radial-gradient(420px 140px at 10% 95%, rgba(15, 23, 42, 0.04), transparent 60%);
-      pointer-events: none;
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .project-body {
@@ -356,8 +328,8 @@
 
     .background-list {
       display: grid;
-      gap: 2px;
-      background: var(--surface-solid);
+      gap: 0;
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -368,9 +340,9 @@
       display: grid;
       grid-template-columns: 170px 1fr;
       gap: 18px;
-      padding: 20px 20px;
+      padding: 20px;
       border-top: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.96);
     }
 
     .background-item:first-child { border-top: 0; }
@@ -408,7 +380,7 @@
       padding: 0 14px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       color: var(--text);
       font-size: 0.92rem;
       font-weight: 600;
@@ -481,6 +453,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="nav">
     <div class="wrap nav-inner">
@@ -499,17 +472,21 @@
       <div class="wrap">
         <div class="eyebrow">Applied Data Science · Explainable AI · NLP · LLM Evaluation</div>
         <h1>Shravani Mahadeshwar</h1>
-        <p class="subtitle">Building trustworthy AI systems through machine learning, interpretability research, analytics, and applied data science.</p>
+        <p class="subtitle">
+          Building trustworthy AI systems through machine learning, interpretability research, analytics, and applied data science.
+        </p>
 
         <div class="hero-row" aria-label="Primary actions">
           <a class="btn primary" href="./cv.pdf" download>Download CV</a>
           <a class="btn ghost" href="https://github.com/Shravani018" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn ghost" href="mailto:shravani.mahadeshwar@fs-students.de">Email</a>
+          <a class="btn ghost" href="mailto:shravani._@outlook.com">Email</a>
         </div>
 
         <div class="stack-card">
           <div class="stack-label">Tech stack</div>
-          <div class="stack-line">Python · R · SQL · Power BI · Tableau · Spark · Streamlit · AWS (S3, EC2) · Docker · n8n</div>
+          <div class="stack-line">
+            Python · R · SQL · Power BI · Tableau · Spark · Streamlit · AWS (S3, EC2) · Docker · n8n
+          </div>
         </div>
       </div>
     </section>
@@ -518,57 +495,70 @@
       <div class="wrap">
         <div class="section-head">
           <p class="section-title">Project Collection</p>
-          <p class="section-copy">A curated collection of projects across analytics, machine learning, explainable AI, NLP, and large language model evaluation.</p>
+          <p class="section-copy">
+            A curated collection of projects across analytics, machine learning, explainable AI, NLP, and large language model evaluation.
+          </p>
         </div>
 
         <div class="year">2026</div>
         <div class="grid">
           <a class="project" href="https://github.com/Shravani018/interpreting-transformer-hallucinations" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/transformer-hallucinations.jpg" alt="Interpreting Transformer Hallucinations">
+            </div>
             <div class="project-body">
-              <div class="project-year">2026</div>
               <h3 class="project-title">Interpreting Transformer Hallucinations</h3>
-              <p class="project-meta">Transformer analysis · interpretability</p>
+              <p class="project-meta">Mechanistic interpretability and hallucination analysis in transformer models.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/hyg-stellar-viz" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/hyg-stellar-viz.jpg" alt="HYG Stellar Viz">
+            </div>
             <div class="project-body">
-              <div class="project-year">2026</div>
               <h3 class="project-title">HYG Stellar Viz</h3>
-              <p class="project-meta">Data visualization</p>
+              <p class="project-meta">Interactive visualization of stellar catalog data and spatial distributions.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/rag-from-scratch" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/rag-from-scratch.jpg" alt="RAG From Scratch">
+            </div>
             <div class="project-body">
-              <div class="project-year">2026</div>
               <h3 class="project-title">RAG From Scratch</h3>
-              <p class="project-meta">Retrieval-augmented generation</p>
+              <p class="project-meta">End-to-end retrieval-augmented generation pipeline built from first principles.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/llm-stress-tester" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/llm-stress-tester.jpg" alt="LLM Stress Tester">
+            </div>
             <div class="project-body">
-              <div class="project-year">2026</div>
               <h3 class="project-title">LLM Stress Tester</h3>
-              <p class="project-meta">Model evaluation · robustness</p>
+              <p class="project-meta">Evaluating robustness, reliability, and failure modes of language models.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/llm-audit-bench" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/llm-audit-bench.jpg" alt="LLM Audit Bench">
+            </div>
             <div class="project-body">
-              <div class="project-year">2026</div>
               <h3 class="project-title">LLM Audit Bench</h3>
-              <p class="project-meta">Trustworthy AI evaluation</p>
+              <p class="project-meta">Benchmarking transparency, fairness, and trustworthiness in LLM systems.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/uno_assignment5" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/uno-assignment5.jpg" alt="UNO Assignment 5">
+            </div>
             <div class="project-body">
-              <div class="project-year">2026</div>
               <h3 class="project-title">UNO Assignment 5</h3>
-              <p class="project-meta">Academic project</p>
+              <p class="project-meta">Game logic implementation and object-oriented software design.</p>
             </div>
           </a>
         </div>
@@ -576,35 +566,42 @@
         <div class="year">2025</div>
         <div class="grid">
           <a class="project" href="https://github.com/Shravani018/Decoding-ESG-Measuring-Clarity-and-Greenwashing-in-Corporate-Disclosures" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/decoding-esg.jpg" alt="Decoding ESG">
+            </div>
             <div class="project-body">
-              <div class="project-year">2025</div>
               <h3 class="project-title">Decoding ESG</h3>
-              <p class="project-meta">NLP · ESG analytics</p>
+              <p class="project-meta">Analyzing corporate disclosures for ESG clarity and greenwashing indicators.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/xai-credit-risk-analysis" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/xai-credit-risk.jpg" alt="XAI Credit Risk Analysis">
+            </div>
             <div class="project-body">
-              <div class="project-year">2025</div>
               <h3 class="project-title">XAI Credit Risk Analysis</h3>
-              <p class="project-meta">Explainable AI</p>
+              <p class="project-meta">Credit risk prediction with SHAP and LIME-based explainability techniques.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/tennis-elo-probabilistic-model" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/tennis-elo.jpg" alt="Tennis Elo Probabilistic Model">
+            </div>
             <div class="project-body">
-              <div class="project-year">2025</div>
               <h3 class="project-title">Tennis Elo Probabilistic Model</h3>
-              <p class="project-meta">Probabilistic modeling</p>
+              <p class="project-meta">Player ranking and match outcome prediction using Elo-based modeling.</p>
             </div>
           </a>
+
           <a class="project" href="https://github.com/Shravani018/deepfractals" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/deep-fractals.jpg" alt="Deep Fractals">
+            </div>
             <div class="project-body">
-              <div class="project-year">2025</div>
               <h3 class="project-title">Deep Fractals</h3>
-              <p class="project-meta">Generative visualization</p>
+              <p class="project-meta">Exploring fractal patterns and emergent structures in computational systems.</p>
             </div>
           </a>
         </div>
@@ -612,31 +609,26 @@
         <div class="year">2024</div>
         <div class="grid cols-1">
           <a class="project" href="https://github.com/jayesh15/applicant-tracking-system-nlp" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/applicant-tracking-system.jpg" alt="Applicant Tracking System">
+            </div>
             <div class="project-body">
-              <div class="project-year">2024</div>
               <h3 class="project-title">Applicant Tracking System</h3>
-              <p class="project-meta">Natural language processing · resume screening · candidate matching</p>
+              <p class="project-meta">Resume screening and candidate matching using natural language processing.</p>
             </div>
           </a>
         </div>
 
         <div class="year">2023</div>
         <div class="grid cols-2">
-          <a class="project" href="https://github.com/Shravani018/PowerBI" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
-            <div class="project-body">
-              <div class="project-year">2023</div>
-              <h3 class="project-title">Power BI</h3>
-              <p class="project-meta">Business intelligence · dashboards</p>
-            </div>
-          </a>
+
           <a class="project" href="https://github.com/Shravani018/Python-And-Tableau" target="_blank" rel="noreferrer">
-            <div class="thumb"></div>
+            <div class="thumb">
+              <img src="images/tableau.png" alt="Python and Tableau">
+            </div>
             <div class="project-body">
-              <div class="project-year">2023</div>
-              <h3 class="project-title">Python and Tableau</h3>
-              <p class="project-meta">Data visualization · analytics</p>
+              <h3 class="project-title">Python &amp; Tableau Analytics</h3>
+              <p class="project-meta">Combining Python workflows with Tableau for analytical storytelling.</p>
             </div>
           </a>
         </div>
@@ -657,6 +649,7 @@
               <p class="bg-org">Frankfurt School of Finance &amp; Management</p>
             </div>
           </div>
+
           <div class="background-item">
             <div class="period">2021 – 2024</div>
             <div>
@@ -673,6 +666,7 @@
         <div class="section-head">
           <p class="section-title">Certifications</p>
         </div>
+
         <div class="chips">
           <span class="chip">AWS</span>
           <span class="chip">Tableau</span>
@@ -690,11 +684,13 @@
           <p class="section-title">Contact</p>
           <p class="section-copy">Use the links below to connect or download the CV.</p>
         </div>
+
         <div class="contact-row">
           <a class="btn primary" href="./CV.pdf" download>Download CV</a>
           <a class="btn ghost" href="mailto:shravani._@outlook.com">Email</a>
           <a class="btn ghost" href="https://github.com/Shravani018" target="_blank" rel="noreferrer">GitHub</a>
         </div>
+
         <p class="footer-note">Open to opportunities in data science, analytics, machine learning, and AI.</p>
       </div>
     </section>
