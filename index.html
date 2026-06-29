@@ -30,11 +30,9 @@ a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 .w{width:min(var(--max),calc(100% - 48px));margin:0 auto}
 
-/* NAV */
+/* NAV — SM. removed, just links */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
-.nav-i{height:56px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;letter-spacing:0.01em;color:var(--text)}
-.brand em{color:var(--warm);font-style:normal}
+.nav-i{height:56px;display:flex;align-items:center;justify-content:flex-end}
 .nav-links{display:flex;gap:2.25rem;align-items:center}
 .nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.05em;transition:color 130ms}
 .nav-links a:hover{color:var(--text)}
@@ -49,9 +47,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 .hero-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:3rem}
 .hero-eyebrow-line{width:28px;height:1px;background:var(--cool);opacity:0.5}
 .hero-eyebrow-text{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--cool);letter-spacing:0.14em;opacity:0.9}
-.hero-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(4rem,11vw,10rem);line-height:0.86;letter-spacing:-0.045em;margin-bottom:3.5rem}
+
+/* NAME — reduced from clamp(4rem,11vw,10rem) to clamp(2.5rem,6vw,5.5rem) */
+.hero-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5.5rem);line-height:1;letter-spacing:-0.03em;margin-bottom:3.5rem}
 .hero-h1 .l1{display:block;color:var(--text)}
 .hero-h1 .l2{display:block;color:var(--warm)}
+
 .hero-bottom{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end}
 .hero-desc{font-size:1rem;color:var(--muted2);line-height:1.85;max-width:44ch;font-weight:300}
 .hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:1.75rem}
@@ -107,7 +108,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 .proj-arrow svg{width:10px;height:10px;color:var(--muted2)}
 .proj:hover .proj-arrow{opacity:1;border-color:var(--cool)}
 .proj:hover .proj-arrow svg{color:var(--cool)}
-/* featured thumb heights */
 .proj-grid.g2 .proj-thumb{aspect-ratio:16/8}
 .proj-grid.g1 .proj-thumb{aspect-ratio:32/9}
 
@@ -181,7 +181,6 @@ footer{padding:1.5rem 0;border-top:1px solid var(--border)}
 
 <nav>
 <div class="w nav-i">
-<div class="brand">SM<em>.</em></div>
 <div class="nav-links">
 <a href="#projects">projects</a>
 <div class="nav-dot"></div>
@@ -466,8 +465,8 @@ Email
 <div class="bg-row">
 <span class="bg-period">Sep 2023 – Feb 2024<br>Jun 2024 – Jan 2025</span>
 <div>
-<p class="bg-role">Data Science Intern<span style="color:var(--muted);font-weight:300;font-size:0.8rem;margin-left:0.5rem"></span></p>
-<p class="bg-role" style="margin-top:4px">Junior Data and Business Analyst<span style="color:var(--muted);font-weight:300;font-size:0.8rem;margin-left:0.5rem"></span></p>
+<p class="bg-role">Data Science Intern</p>
+<p class="bg-role" style="margin-top:4px">Junior Data and Business Analyst</p>
 <p class="bg-sub" style="margin-top:6px">Analytics, reporting, automation, and data-driven decision-making</p>
 <span class="bg-type work">FINANCIAL SERVICES</span>
 </div>
