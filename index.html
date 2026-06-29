@@ -69,17 +69,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 .stack-i{display:flex;align-items:stretch;min-height:56px}
 .stack-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--warm);letter-spacing:0.22em;display:flex;align-items:center;padding:0 1.75rem;border-right:1px solid var(--border);white-space:nowrap;flex-shrink:0;background:rgba(224,92,74,0.06)}
 .stack-pills{display:flex;flex-wrap:wrap;align-items:center}
-.stack-pill{font-family:'JetBrains Mono',monospace;font-size:0.76rem;font-weight:500;color:var(--text);letter-spacing:0.03em;padding:0 1.4rem;border-right:1px solid var(--border);height:56px;display:flex;align-items:center;transition:color 130ms,background 130ms}
+.stack-pill{font-family:'JetBrains Mono',monospace;font-size:0.76rem;font-weight:500;color:var(--text);letter-spacing:0.03em;padding:0 1.15rem;border-right:1px solid var(--border);height:56px;display:flex;align-items:center;gap:0.55rem;transition:color 130ms,background 130ms;white-space:nowrap}
 .stack-pill:hover{color:var(--cool);background:rgba(94,196,187,0.05)}
+.stack-icon{width:15px;height:15px;display:block;flex-shrink:0;object-fit:contain}
 
 /* SECTIONS */
 .sec{padding:96px 0;border-bottom:1px solid var(--border)}
 .sec:last-of-type{border-bottom:none}
 .sec-head{margin-bottom:60px}
-.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted);letter-spacing:0.2em;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem}
-.sec-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--muted)}
+.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--muted);letter-spacing:0.24em;margin-bottom:0.85rem;display:flex;align-items:center;gap:0.55rem}
+.sec-eyebrow::before{display:none}
 .sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.75rem,3.5vw,2.75rem);letter-spacing:-0.02em;color:var(--text);line-height:1.05;margin-bottom:0.75rem}
-.sec-desc{font-size:0.9rem;color:var(--muted2);line-height:1.8;max-width:54ch}
+.sec-desc{font-size:1.02rem;color:var(--muted2);line-height:1.95;max-width:60ch}
 
 /* YEAR DIVIDER */
 .yr-block{display:flex;align-items:center;gap:1.25rem;margin:52px 0 20px}
@@ -91,16 +92,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 /* PROJECT GRID */
 .proj-grid{display:grid;gap:1px;background:var(--border)}
 .proj-grid.g3{grid-template-columns:repeat(3,1fr)}
-.proj-grid.g2{grid-template-columns:repeat(2,1fr)}
+.proj-grid.g2{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;grid-auto-rows:1fr}
 .proj-grid.g1{grid-template-columns:1fr}
-.proj{background:var(--bg2);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background 180ms}
+.proj{background:var(--bg2);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background 180ms;height:100%}
 .proj:hover{background:var(--bg3)}
 .proj-thumb{background:var(--bg);overflow:hidden;position:relative;aspect-ratio:16/9}
 .proj-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(11,12,16,0.65));pointer-events:none;z-index:1}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 500ms ease;opacity:0.9}
 .proj:hover .proj-thumb img{transform:scale(1.04);opacity:1}
 .proj-thumb-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--border2);letter-spacing:0.1em;z-index:0}
-.proj-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px;z-index:1}
+.proj-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px;z-index:1;flex:1}
 .proj-cat{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--cool);letter-spacing:0.16em;opacity:0.9}
 .proj-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);line-height:1.2}
 .proj-desc{font-size:0.8rem;color:var(--muted2);line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -108,7 +109,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 .proj-arrow svg{width:10px;height:10px;color:var(--muted2)}
 .proj:hover .proj-arrow{opacity:1;border-color:var(--cool)}
 .proj:hover .proj-arrow svg{color:var(--cool)}
-.proj-grid.g2 .proj-thumb{aspect-ratio:16/8}
+.proj-grid.g2 .proj-thumb{aspect-ratio:16/9}
 .proj-grid.g1 .proj-thumb{aspect-ratio:32/9}
 
 /* BACKGROUND TABLE */
@@ -127,17 +128,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 /* CONTACT */
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
 .contact-l{background:var(--bg2);padding:3.5rem}
-.contact-r{background:var(--bg3);padding:3.5rem;display:flex;flex-direction:column;justify-content:center;gap:2rem}
+.contact-r{background:var(--bg3);padding:3.5rem;display:flex;flex-direction:column;justify-content:flex-start;gap:1.5rem}
 .contact-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:0.92;letter-spacing:-0.035em;color:var(--text);margin-bottom:1.25rem}
 .contact-h em{font-style:normal;color:var(--warm)}
-.contact-note{font-size:0.88rem;color:var(--muted2);line-height:1.8;max-width:34ch;margin-bottom:1.5rem}
+.contact-note{font-size:0.92rem;color:var(--muted2);line-height:1.9;max-width:38ch;margin-bottom:1.5rem}
 .contact-link-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-top:1px solid var(--border)}
 .contact-link-row:last-of-type{border-bottom:1px solid var(--border)}
 .contact-link-row span:first-child{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;color:var(--muted)}
 .contact-link-row span:last-child{font-size:0.82rem;color:var(--muted2);transition:color 130ms}
 .contact-link-row:hover span:last-child{color:var(--cool)}
 .contact-r-tagline{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);line-height:1.35}
-.contact-r-note{font-size:0.85rem;color:var(--muted2);line-height:1.75;max-width:28ch}
+.contact-r-note{font-size:0.86rem;color:var(--muted2);line-height:1.75;max-width:30ch}
 
 /* FOOTER */
 footer{padding:1.5rem 0;border-top:1px solid var(--border)}
@@ -170,7 +171,7 @@ footer{padding:1.5rem 0;border-top:1px solid var(--border)}
 .nav-dot{display:none}
 .proj-grid.g3,.proj-grid.g2{grid-template-columns:1fr}
 .proj-grid.g2 .proj-thumb{aspect-ratio:16/9}
-.stack-pill{padding:0 1rem;font-size:0.7rem}
+.stack-pill{padding:0 0.9rem;font-size:0.68rem}
 .contact-l,.contact-r{padding:2rem}
 .bg-row{grid-template-columns:1fr}
 }
@@ -233,16 +234,18 @@ Email
 <div class="stack-i">
 <span class="stack-label">STACK</span>
 <div class="stack-pills">
-<span class="stack-pill">Python</span>
-<span class="stack-pill">R</span>
-<span class="stack-pill">SQL</span>
-<span class="stack-pill">Spark</span>
-<span class="stack-pill">Power BI</span>
-<span class="stack-pill">Tableau</span>
-<span class="stack-pill">Streamlit</span>
-<span class="stack-pill">AWS</span>
-<span class="stack-pill">Docker</span>
-<span class="stack-pill">n8n</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/python/EEEDF0" alt="">Python</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/r/EEEDF0" alt="">R</span>
+<span class="stack-pill">
+<svg class="stack-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="3.5"></ellipse><path d="M4.5 5.5v8.5c0 1.9 3.4 3.5 7.5 3.5s7.5-1.6 7.5-3.5V5.5"></path><path d="M4.5 10c0 1.9 3.4 3.5 7.5 3.5s7.5-1.6 7.5-3.5"></path></svg>
+SQL</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/apachespark/EEEDF0" alt="">Spark</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/powerbi/EEEDF0" alt="">Power BI</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/tableau/EEEDF0" alt="">Tableau</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/streamlit/EEEDF0" alt="">Streamlit</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/amazonwebservices/EEEDF0" alt="">AWS</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/docker/EEEDF0" alt="">Docker</span>
+<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/n8n/EEEDF0" alt="">n8n</span>
 </div>
 </div>
 </div>
@@ -252,7 +255,7 @@ Email
 <div class="w">
 <div class="sec-head reveal">
 <div class="sec-eyebrow">PROJECT_COLLECTION</div>
-<p class="sec-desc">Analytics, machine learning, explainable AI, NLP, and applied AI research, built in the open.</p>
+<p class="sec-desc">Analytics, machine learning, explainable AI, NLP, and applied AI research. Built in the open, with a focus on practical depth and clean presentation.</p>
 </div>
 
 <div class="reveal">
@@ -356,7 +359,7 @@ Email
 <div class="proj-body">
 <p class="proj-cat">GENERATIVE · COMPUTATION</p>
 <p class="proj-name">Deep Fractals</p>
-<p class="proj-desc">Gradient descent basin visualisation as fractal geometry, mapping loss landscape attraction in the complex weight plane with high-resolution Julia set rendering.</p>
+<p class="proj-desc">Deep learning math iterated across the complex plane. The fractal geometry that emerges reflects how networks actually behave; where they converge, where they explode, and what sits at the edge between the two.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -389,46 +392,35 @@ Email
 
 <div class="reveal">
 <div class="yr-block">
-<span class="yr-num">2024</span>
+<span class="yr-num">2023–2024</span>
 <div class="yr-rule"></div>
-<span class="yr-count">1 project</span>
+<span class="yr-count">2 projects</span>
 </div>
-<div class="proj-grid g1">
+<div class="proj-grid g2">
 <a class="proj" href="https://github.com/jayesh15/applicant-tracking-system-nlp" target="_blank" rel="noreferrer">
 <div class="proj-thumb">
 <span class="proj-thumb-ph">no_img</span>
 <img src="images/ats.png" alt="Applicant Tracking System" loading="lazy" onerror="this.remove()">
 </div>
 <div class="proj-body">
-<p class="proj-cat">NLP · RECRUITING</p>
+<p class="proj-cat">2024 · NLP · RECRUITING</p>
 <p class="proj-name">Applicant Tracking System</p>
 <p class="proj-desc">Resume screening and candidate-to-JD matching using NLP. Handles PDF/DOCX ingestion, keyword extraction, and similarity scoring through a Streamlit interface.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
-</div>
-</div>
-
-<div class="reveal">
-<div class="yr-block">
-<span class="yr-num">2023</span>
-<div class="yr-rule"></div>
-<span class="yr-count">1 project</span>
-</div>
-<div class="proj-grid g2">
 <a class="proj" href="https://github.com/Shravani018/Python-And-Tableau" target="_blank" rel="noreferrer">
 <div class="proj-thumb" style="aspect-ratio:16/9">
 <span class="proj-thumb-ph">no_img</span>
 <img src="images/tableau.png" alt="Python and Tableau Analytics" loading="lazy" onerror="this.remove()">
 </div>
 <div class="proj-body">
-<p class="proj-cat">VISUALIZATION · ANALYTICS</p>
+<p class="proj-cat">2023 · VISUALIZATION · ANALYTICS</p>
 <p class="proj-name">Python and Tableau Analytics</p>
 <p class="proj-desc">Sentiment analysis pipeline for BlogMe article engagement. Python preprocessing feeds Tableau dashboards tracking tone against total engagement by source.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
-<div style="background:var(--bg2)"></div>
 </div>
 </div>
 
@@ -485,7 +477,7 @@ Email
 <div class="contact-wrap reveal">
 <div class="contact-l">
 <h2 class="contact-h">Let's<br>work<br><em>together.</em></h2>
-<p class="contact-note">Open to data science, ML research, explainable AI, and analytics roles. Based in Frankfurt, available globally.</p>
+<p class="contact-note">Based in Frankfurt and available globally for data science, ML research, explainable AI, and analytics roles.</p>
 <a class="contact-link-row" href="mailto:shravani._@outlook.com" style="display:flex">
 <span>EMAIL</span><span>shravani._@outlook.com</span>
 </a>
@@ -495,7 +487,6 @@ Email
 </div>
 <div class="contact-r">
 <p class="contact-r-tagline">Full CV with education, experience, and project details.</p>
-<p class="contact-r-note">Open to research collaborations, working student positions, and internships.</p>
 <a class="cv-btn" href="./CV.pdf" download>
 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M5 7l3 3 3-3M3 12h10"/></svg>
 Download CV
