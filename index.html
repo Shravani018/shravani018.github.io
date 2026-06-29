@@ -18,14 +18,14 @@
 --border2:#2A2F44;
 --text:#EEEDF0;
 --muted:#6B7290;
---muted2:#B0B8D0;
+--muted2:#C9D2E8;
 --warm:#6C63FF;
 --cool:#5EC4BB;
 --max:1160px;
 --r:4px;
 }
 html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 .w{width:min(var(--max),calc(100% - 48px));margin:0 auto}
@@ -54,11 +54,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 .hero-h1 .l2{display:block;color:var(--warm)}
 
 .hero-bottom{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end}
-.hero-desc{font-size:1rem;color:var(--muted2);line-height:1.85;max-width:44ch;font-weight:300}
+.hero-desc{font-size:1rem;color:var(--muted2);line-height:1.85;max-width:50ch;font-weight:400}
 .hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:1.75rem}
 .cv-btn{display:inline-flex;align-items:center;gap:0.6rem;background:var(--warm);color:#EEEDF0;font-family:'Syne',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.07em;padding:0.75rem 1.75rem;border-radius:var(--r);transition:opacity 140ms,transform 140ms;white-space:nowrap}
 .cv-btn:hover{opacity:0.88;transform:translateY(-1px)}
 .cv-btn svg{width:14px;height:14px;flex-shrink:0}
+.contact-r .cv-btn{width:100%;justify-content:center;align-self:stretch}
 .hero-socials{display:flex;gap:1rem}
 .h-social{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text);letter-spacing:0.06em;display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;border:1px solid var(--border2);border-radius:var(--r);transition:border-color 130ms,color 130ms,background 130ms}
 .h-social:hover{border-color:var(--cool);color:var(--cool);background:rgba(94,196,187,0.06)}
@@ -76,11 +77,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 /* SECTIONS */
 .sec{padding:96px 0;border-bottom:1px solid var(--border)}
 .sec:last-of-type{border-bottom:none}
-.sec-head{margin-bottom:60px}
-.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--muted);letter-spacing:0.24em;margin-bottom:0.85rem;display:flex;align-items:center;gap:0.55rem}
+.sec-head{margin-bottom:60px;text-align:center}
+.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--muted);letter-spacing:0.24em;margin-bottom:0.85rem;display:flex;align-items:center;justify-content:center;gap:0.55rem}
 .sec-eyebrow::before{display:none}
 .sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.75rem,3.5vw,2.75rem);letter-spacing:-0.02em;color:var(--text);line-height:1.05;margin-bottom:0.75rem}
-.sec-desc{font-size:1.02rem;color:var(--muted2);line-height:1.95;max-width:60ch}
+.sec-desc{font-size:1.02rem;color:var(--muted2);line-height:1.95;max-width:60ch;margin:0 auto}
 
 /* YEAR DIVIDER */
 .yr-block{display:flex;align-items:center;gap:1.25rem;margin:52px 0 20px}
@@ -255,7 +256,7 @@ SQL</span>
 <div class="w">
 <div class="sec-head reveal">
 <div class="sec-eyebrow">PROJECT_COLLECTION</div>
-<p class="sec-desc">Analytics, machine learning, explainable AI, NLP, and applied AI research. Built in the open, with a focus on practical depth and clean presentation.</p>
+<p class="sec-desc">Analytics, machine learning, explainable AI, NLP, and applied AI research, with a focus on practical depth and thoughtful engineering.</p>
 </div>
 
 <div class="reveal">
@@ -274,7 +275,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">INTERPRETABILITY · NLP</p>
 <p class="proj-name">Interpreting Transformer Hallucinations</p>
-<p class="proj-desc">Mechanistic interpretability of GPT-Neo-125M using Sankey flow diagrams, head attribution heatmaps, and 3D circuit graphs to trace how hallucinations propagate through attention layers.</p>
+<p class="proj-desc">Mechanistic analysis of GPT-Neo-125M that traces factual hallucinations through attention heads, residual stream geometry, and attribution circuits, revealing how incorrect outputs emerge inside transformer layers.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -286,7 +287,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">EVALUATION · TRUST</p>
 <p class="proj-name">LLM Audit Bench</p>
-<p class="proj-desc">Five-pillar trustworthiness framework benchmarking transparency, fairness, privacy, explainability, and robustness across five open-source models with weighted composite scoring.</p>
+<p class="proj-desc">Modular evaluation framework benchmarking open-source language models across transparency, fairness, robustness, explainability, and privacy using a weighted trustworthiness scoring system.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -301,7 +302,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">RETRIEVAL · LLM</p>
 <p class="proj-name">RAG From Scratch</p>
-<p class="proj-desc">End-to-end retrieval-augmented generation pipeline covering data loading, chunking, BERT/MPNet embeddings, cosine similarity retrieval, and LLM generation.</p>
+<p class="proj-desc">Retrieval-Augmented Generation pipeline implementing document ingestion, intelligent chunking, semantic embeddings, vector retrieval, and context-aware response generation through modular, end-to-end components.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -313,7 +314,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">VISUALIZATION · DATA</p>
 <p class="proj-name">HYG Stellar Viz</p>
-<p class="proj-desc">Full-sky KDE density map of 41,149 stars brighter than magnitude 8 from the HYG catalog, plotted across right ascension and declination.</p>
+<p class="proj-desc">Interactive visualization of the HYG Star Database using density mapping and celestial projections to explore the spatial distribution of more than 41,000 nearby stars.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -325,7 +326,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">SOFTWARE DESIGN · RL</p>
 <p class="proj-name">UNO: RL Bot</p>
-<p class="proj-desc">Playable UNO with a Reinforcement Learning opponent. Object-oriented game engine with pluggable AI strategy layers.</p>
+<p class="proj-desc">Competitive UNO environment featuring rule-based, Monte Carlo Tree Search, and reinforcement learning agents with tournament benchmarking and an interactive Streamlit interface.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -347,7 +348,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">XAI · CREDIT RISK</p>
 <p class="proj-name">XAI Credit Risk Analysis</p>
-<p class="proj-desc">Random Forest credit risk model with SHAP waterfall explanations and LIME, surfacing per-prediction drivers through an interactive Streamlit dashboard.</p>
+<p class="proj-desc">Explainable credit risk prediction system combining Random Forest models with SHAP and LIME explanations in an interactive dashboard for transparent lending decisions.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -359,7 +360,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">GENERATIVE · COMPUTATION</p>
 <p class="proj-name">Deep Fractals</p>
-<p class="proj-desc">Deep learning math iterated across the complex plane. The fractal geometry that emerges reflects how networks actually behave; where they converge, where they explode, and what sits at the edge between the two.</p>
+<p class="proj-desc">Explores how deep learning behaves through complex-plane fractal mathematics, revealing where optimization converges, diverges, and transitions between stable and chaotic regions.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -371,7 +372,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">NLP · FINANCE</p>
 <p class="proj-name">Decoding ESG</p>
-<p class="proj-desc">NLP analysis of Apple and Tesla SEC filings measuring ESG disclosure clarity and greenwashing signals from 2015 to 2024.</p>
+<p class="proj-desc">NLP pipeline analyzing Apple and Tesla SEC filings to measure ESG disclosure clarity, consistency, and potential greenwashing trends across nearly a decade of corporate reporting.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -383,7 +384,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">PROBABILISTIC MODELING</p>
 <p class="proj-name">Tennis Elo Model</p>
-<p class="proj-desc">Surface-weighted Elo rating system with Monte Carlo tournament simulation, configurable K-factor and train/test splits.</p>
+<p class="proj-desc">Surface-aware Elo rating system with probabilistic match prediction and Monte Carlo tournament simulation for forecasting player performance across ATP events.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -405,7 +406,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">2024 · NLP · RECRUITING</p>
 <p class="proj-name">Applicant Tracking System</p>
-<p class="proj-desc">Resume screening and candidate-to-JD matching using NLP. Handles PDF/DOCX ingestion, keyword extraction, and similarity scoring through a Streamlit interface.</p>
+<p class="proj-desc">Applicant screening and job-description matching using NLP with PDF/DOCX ingestion, keyword extraction, and similarity scoring in a Streamlit interface.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -417,7 +418,7 @@ SQL</span>
 <div class="proj-body">
 <p class="proj-cat">2023 · VISUALIZATION · ANALYTICS</p>
 <p class="proj-name">Python and Tableau Analytics</p>
-<p class="proj-desc">Sentiment analysis pipeline for BlogMe article engagement. Python preprocessing feeds Tableau dashboards tracking tone against total engagement by source.</p>
+<p class="proj-desc">End-to-end analytics project combining Python preprocessing with Tableau dashboards to analyze BlogMe article sentiment, engagement patterns, and content performance.</p>
 </div>
 <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
 </a>
@@ -477,7 +478,7 @@ SQL</span>
 <div class="contact-wrap reveal">
 <div class="contact-l">
 <h2 class="contact-h">Let's<br>work<br><em>together.</em></h2>
-<p class="contact-note">Based in Frankfurt and available globally for data science, ML research, explainable AI, and analytics roles.</p>
+<p class="contact-note">Based in Frankfurt, open to internships, research collaborations, and opportunities in machine learning.</p>
 <a class="contact-link-row" href="mailto:shravani._@outlook.com" style="display:flex">
 <span>EMAIL</span><span>shravani._@outlook.com</span>
 </a>
@@ -486,7 +487,7 @@ SQL</span>
 </a>
 </div>
 <div class="contact-r">
-<p class="contact-r-tagline">Full CV with education, experience, and project details.</p>
+<p class="contact-r-tagline">Download the full CV for education, experience, and selected projects.</p>
 <a class="cv-btn" href="./CV.pdf" download>
 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M5 7l3 3 3-3M3 12h10"/></svg>
 Download CV
