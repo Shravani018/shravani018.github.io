@@ -97,10 +97,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 .proj-grid.g1{grid-template-columns:1fr}
 .proj{background:var(--bg2);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background 180ms;height:100%}
 .proj:hover{background:var(--bg3)}
-.proj-thumb{background:var(--bg);overflow:hidden;position:relative;aspect-ratio:16/9}
+.proj-thumb{background:var(--bg);overflow:hidden;position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
 .proj-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(11,12,16,0.65));pointer-events:none;z-index:1}
-.proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 500ms ease;opacity:0.9}
-.proj:hover .proj-thumb img{transform:scale(1.04);opacity:1}
+.proj-thumb img{width:100%;height:100%;object-fit:contain;object-position:center;padding:12px;transition:transform 500ms ease;opacity:0.95}
+.proj:hover .proj-thumb img{transform:scale(1.03);opacity:1}
 .proj-thumb-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--border2);letter-spacing:0.1em;z-index:0}
 .proj-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px;z-index:1;flex:1}
 .proj-cat{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--cool);letter-spacing:0.16em;opacity:0.9}
@@ -148,11 +148,6 @@ footer{padding:1.5rem 0;border-top:1px solid var(--border)}
 .foot-brand em{color:var(--warm);font-style:normal}
 .foot-meta{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted);letter-spacing:0.08em}
 
-/* SCROLL HINT */
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0.3}
-.scroll-hint span{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;color:var(--muted)}
-.scroll-hint-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--muted),transparent);animation:scrollpulse 2s ease-in-out infinite}
-@keyframes scrollpulse{0%,100%{opacity:0.3}50%{opacity:0.9}}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity 600ms ease,transform 600ms ease}
