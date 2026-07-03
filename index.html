@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,18 +11,18 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---bg:#0B0C10;
---bg2:#13151E;
---bg3:#1A1D27;
---border:#1E2130;
---border2:#2A2F44;
---text:#EEEDF0;
---muted:#6B7290;
---muted2:#C9D2E8;
---warm:#6C63FF;
---cool:#5EC4BB;
---max:1160px;
---r:4px;
+  --bg:#0B0C10;
+  --bg2:#13151E;
+  --bg3:#1A1D27;
+  --border:#1E2130;
+  --border2:#2A2F44;
+  --text:#EEEDF0;
+  --muted:#6B7290;
+  --muted2:#C9D2E8;
+  --warm:#6C63FF;
+  --cool:#5EC4BB;
+  --max:1160px;
+  --r:4px;
 }
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
@@ -31,379 +30,501 @@ a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 .w{width:min(var(--max),calc(100% - 48px));margin:0 auto}
 
-/* NAV — SM. removed, just links */nav{position;top:0;left:0;right:0;z-index:200;background(11,12,16,0.92);backdrop-filter(24px);border-bottom:1px solid var(--border)}.nav-i{height:56px;display;align-items;justify-content}.nav-links{display;gap:2.25rem;align-items}.nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color(--muted);letter-spacing:0.05em;transition 130ms}.nav-links a{color(--text)}.nav-dot{width:4px;height:4px;border-radius:50%;background(--border2)}
+/* NAV */
+nav{position:sticky;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-i{height:56px;display:flex;align-items:center;justify-content:center}
+.nav-links{display:flex;gap:2.25rem;align-items:center}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.05em;transition:color 130ms}
+.nav-links a:hover{color:var(--text)}
+.nav-dot{width:4px;height:4px;border-radius:50%;background:var(--border2)}
 
-/* HERO */.hero{min-height:100vh;display;flex-direction;justify-content;padding:110px 0 72px;position;overflow}.attn-grid{position;inset:0;display;pointer-events;z-index:0;opacity:0;transition 1200ms ease;grid-template-columns(22,1fr);grid-template-rows(12,1fr);gap:2px;padding:1px}.attn-grid.loaded{opacity:1}.attn-cell{border-radius:1px;background(--cool)}.hero-inner{position;z-index:1}.hero-eyebrow{display;align-items;gap:0.75rem;margin-bottom:3rem}.hero-eyebrow-line{width:28px;height:1px;background(--cool);opacity:0.5}.hero-eyebrow-text{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color(--cool);letter-spacing:0.14em;opacity:0.9}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:110px 0 72px;position:relative;overflow:hidden}
+.attn-grid{position:absolute;inset:0;display:grid;pointer-events:none;z-index:0;opacity:0;transition:opacity 1200ms ease;grid-template-columns:repeat(22,1fr);grid-template-rows:repeat(12,1fr);gap:2px;padding:1px}
+.attn-grid.loaded{opacity:1}
+.attn-cell{border-radius:1px;background:var(--cool)}
+.hero-inner{position:relative;z-index:1}
+.hero-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:3rem}
+.hero-eyebrow-line{width:28px;height:1px;background:var(--cool);opacity:0.5}
+.hero-eyebrow-text{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--cool);letter-spacing:0.14em;opacity:0.9}
 
-/* NAME — reduced from clamp(4rem,11vw,10rem) to clamp(2.5rem,6vw,5.5rem) */.hero-h1{font-family:'Syne',sans-serif;font-weight:800;font-size(2.5rem,6vw,5.5rem);line-height:1;letter-spacing:-0.03em;margin-bottom:3.5rem}.hero-h1 .l1{display;color(--text)}.hero-h1 .l2{display;color(--warm)}
+.hero-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5.5rem);line-height:1;letter-spacing:-0.03em;margin-bottom:3.5rem}
+.hero-h1 .l1{display:block;color:var(--text)}
+.hero-h1 .l2{display:block;color:var(--warm)}
 
-.hero-bottom{display;grid-template-columns:1fr auto;gap:3rem;align-items}.hero-desc{font-size:1rem;color(--muted2);line-height:1.85;max-width:50ch;font-weight:400}.hero-actions{display;flex-direction;align-items;gap:1.75rem}.cv-btn{display;align-items;gap:0.6rem;background(--warm);color:#EEEDF0;font-family:'Syne',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.07em;padding:0.75rem 1.75rem;border-radius(--r);transition 140ms,transform 140ms;white-space}.cv-btn{opacity:0.88;transform(-1px)}.cv-btn svg{width:14px;height:14px;flex-shrink:0}.contact-r .cv-btn{width:100%;justify-content;align-self}.hero-socials{display;gap:1rem}.h-social{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color(--text);letter-spacing:0.06em;display;align-items;gap:0.5rem;padding:0.5rem 1rem;border:1px solid var(--border2);border-radius(--r);transition 130ms,color 130ms,background 130ms}.h-social{border-color(--cool);color(--cool);background(94,196,187,0.06)}.h-social svg{width:13px;height:13px;flex-shrink:0;opacity:0.7}
+.hero-bottom{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end}
+.hero-desc{font-size:1rem;color:var(--muted2);line-height:1.85;max-width:50ch;font-weight:400}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:1.75rem}
+.cv-btn{display:flex;align-items:center;gap:0.6rem;background:var(--warm);color:#EEEDF0;font-family:'Syne',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.07em;padding:0.75rem 1.75rem;border-radius:var(--r);transition:opacity 140ms,transform 140ms;white-space:nowrap}
+.cv-btn:hover{opacity:0.88;transform:translateY(-1px)}
+.cv-btn svg{width:14px;height:14px;flex-shrink:0}
+.contact-r .cv-btn{width:auto;justify-content:center;align-self:center}
+.hero-socials{display:flex;gap:1rem}
+.h-social{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text);letter-spacing:0.06em;display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;border:1px solid var(--border2);border-radius:var(--r);transition:border-color 130ms,color 130ms,background 130ms}
+.h-social:hover{border-color:var(--cool);color:var(--cool);background:rgba(94,196,187,0.06)}
+.h-social svg{width:13px;height:13px;flex-shrink:0;opacity:0.7}
 
-/* STACK */.stack{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background(--bg2)}.stack-i{display;align-items;min-height:56px}.stack-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color(--warm);letter-spacing:0.22em;display;align-items;padding:0 1.75rem;border-right:1px solid var(--border);white-space;flex-shrink:0;background(224,92,74,0.06)}.stack-pills{display;flex-wrap;align-items}.stack-pill{font-family:'JetBrains Mono',monospace;font-size:0.76rem;font-weight:500;color(--text);letter-spacing:0.03em;padding:0 1.15rem;border-right:1px solid var(--border);height:56px;display;align-items;gap:0.55rem;transition 130ms,background 130ms;white-space}.stack-pill{color(--cool);background(94,196,187,0.05)}.stack-icon{width:15px;height:15px;display;flex-shrink:0;object-fit}
+/* STACK */
+.stack{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+.stack-i{display:flex;align-items:center;min-height:56px}
+.stack-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--warm);letter-spacing:0.22em;display:flex;align-items:center;padding:0 1.75rem;border-right:1px solid var(--border);white-space:nowrap;flex-shrink:0;background:rgba(108,99,255,0.06)}
+.stack-pills{display:flex;flex-wrap:wrap;align-items:center}
+.stack-pill{font-family:'JetBrains Mono',monospace;font-size:0.76rem;font-weight:500;color:var(--text);letter-spacing:0.03em;padding:0 1.15rem;border-right:1px solid var(--border);height:56px;display:flex;align-items:center;gap:0.55rem;transition:color 130ms,background 130ms;white-space:nowrap}
+.stack-pill:hover{color:var(--cool);background:rgba(94,196,187,0.05)}
+.stack-icon{width:15px;height:15px;display:block;flex-shrink:0;object-fit:contain}
 
-/* SECTIONS */.sec{padding:96px 0;border-bottom:1px solid var(--border)}.sec.sec-head{margin-bottom:60px;text-align}.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color(--muted);letter-spacing:0.24em;margin-bottom:0.85rem;display;align-items;justify-content;gap:0.55rem}.sec-eyebrow::before{display}.sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size(1.75rem,3.5vw,2.75rem);letter-spacing:-0.02em;color(--text);line-height:1.05;margin-bottom:0.75rem}.sec-desc{font-size:1.02rem;color(--muted2);line-height:1.95;max-width:60ch;margin:0 auto}
+/* SECTIONS */
+.sec{padding:96px 0;border-bottom:1px solid var(--border)}
+.sec-head{margin-bottom:60px;text-align:center}
+.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--muted);letter-spacing:0.24em;margin-bottom:0.85rem;display:flex;align-items:center;justify-content:center;gap:0.55rem}
+.sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.75rem,3.5vw,2.75rem);letter-spacing:-0.02em;color:var(--text);line-height:1.05;margin-bottom:0.75rem}
+.sec-desc{font-size:1.02rem;color:var(--muted2);line-height:1.95;max-width:60ch;margin:0 auto}
 
-/* YEAR DIVIDER */.yr-block{display;align-items;gap:1.25rem;margin:52px 0 20px}.yr-block.yr-num{font-family:'Syne',sans-serif;font-weight:700;font-size:0.72rem;color(--muted);letter-spacing:0.16em;flex-shrink:0}.yr-rule{flex:1;height:1px;background(--border)}.yr-count{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color(--muted);letter-spacing:0.08em;flex-shrink:0}
+/* YEAR DIVIDER */
+.yr-block{display:flex;align-items:center;gap:1.25rem;margin:52px 0 20px}
+.yr-num{font-family:'Syne',sans-serif;font-weight:700;font-size:0.72rem;color:var(--muted);letter-spacing:0.16em;flex-shrink:0}
+.yr-rule{flex:1;height:1px;background:var(--border)}
+.yr-count{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted);letter-spacing:0.08em;flex-shrink:0}
 
-/* PROJECT GRID */.proj-grid{display;gap:1px;background(--border)}.proj-grid.g3{grid-template-columns(3,1fr)}.proj-grid.g2{grid-template-columns(2,minmax(0,1fr));align-items;grid-auto-rows:1fr}.proj-grid.g1{grid-template-columns:1fr}.proj{background(--bg2);display;flex-direction;position;overflow;transition 180ms;height:100%}.proj{background(--bg3)}.proj-thumb{background(--bg);overflow;position;aspect-ratio:16/9;display;align-items;justify-content}.proj-thumb::after{content:'';position;inset:0;background(to bottom,transparent 40%,rgba(11,12,16,0.65));pointer-events;z-index:1}.proj-thumb img{width:100%;height:100%;object-fit;object-position;padding:12px;transition 500ms ease;opacity:0.95}.proj .proj-thumb img{transform(1.03);opacity:1}.proj-thumb-ph{position;inset:0;display;align-items;justify-content;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color(--border2);letter-spacing:0.1em;z-index:0}.proj-body{padding:20px 22px 24px;display;flex-direction;gap:6px;z-index:1;flex:1}.proj-cat{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color(--cool);letter-spacing:0.16em;opacity:0.9}.proj-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color(--text);line-height:1.2}.proj-desc{font-size:0.8rem;color(--muted2);line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient;overflow}.proj-arrow{position;top:16px;right:16px;width:26px;height:26px;border:1px solid var(--border2);border-radius:50%;display;align-items;justify-content;opacity:0;transition 180ms,border-color 180ms;z-index:2}.proj-arrow svg{width:10px;height:10px;color(--muted2)}.proj .proj-arrow{opacity:1;border-color(--cool)}.proj .proj-arrow svg{color(--cool)}.proj-grid.g2 .proj-thumb{aspect-ratio:16/9}.proj-grid.g1 .proj-thumb{aspect-ratio:32/9}
+/* PROJECT GRID */
+.proj-grid{display:grid;gap:1px;background:var(--border)}
+.proj-grid.g3{grid-template-columns:repeat(3,1fr)}
+.proj-grid.g2{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;grid-auto-rows:1fr}
+.proj-grid.g1{grid-template-columns:1fr}
+.proj{background:var(--bg2);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background 180ms;height:100%}
+.proj:hover{background:var(--bg3)}
+.proj-thumb{background:var(--bg);overflow:hidden;position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.proj-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(11,12,16,0.65));pointer-events:none;z-index:1}
+.proj-thumb img{width:100%;height:100%;object-fit:contain;object-position:center;padding:12px;transition:transform 500ms ease,opacity 500ms ease;opacity:0.95}
+.proj:hover .proj-thumb img{transform:scale(1.03);opacity:1}
+.proj-thumb-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--border2);letter-spacing:0.1em;z-index:0}
+.proj-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px;z-index:1;flex:1}
+.proj-cat{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--cool);letter-spacing:0.16em;opacity:0.9}
+.proj-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);line-height:1.2}
+.proj-desc{font-size:0.8rem;color:var(--muted2);line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.proj-arrow{position:absolute;top:16px;right:16px;width:26px;height:26px;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 180ms,border-color 180ms;z-index:2}
+.proj-arrow svg{width:10px;height:10px;color:var(--muted2)}
+.proj:hover .proj-arrow{opacity:1;border-color:var(--cool)}
+.proj:hover .proj-arrow svg{color:var(--cool)}
+.proj-grid.g2 .proj-thumb{aspect-ratio:16/9}
+.proj-grid.g1 .proj-thumb{aspect-ratio:32/9}
 
-/* BACKGROUND TABLE */.bg-table{border:1px solid var(--border);border-radius(--r);overflow}.bg-row{display;grid-template-columns:175px 1fr auto;gap:2rem;padding:1.6rem 1.8rem;border-bottom:1px solid var(--border);align-items;transition 150ms}.bg-row.bg-row{background(--bg2)}.bg-period{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color(--muted);letter-spacing:0.02em;white-space;line-height:1.7;padding-top:2px}.bg-role{font-family:'Syne',sans-serif;font-weight:700;font-size:0.92rem;color(--text);margin-bottom:5px;line-height:1.2}.bg-sub{font-family:'JetBrains Mono',monospace;font-size:0.63rem;color(--muted2);letter-spacing:0.02em;line-height:1.7}.bg-org{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color(--muted2);text-align;white-space;padding-top:2px}.bg-type{display;font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.14em;padding:3px 9px;border:1px solid var(--border2);border-radius:2px;color(--muted);margin-top:8px}.bg-type.edu{border-color(94,196,187,0.3);color(--cool)}.bg-type.work{border-color(224,92,74,0.3);color(--warm)}
+/* BACKGROUND TABLE */
+.bg-table{border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.bg-row{display:grid;grid-template-columns:175px 1fr auto;gap:2rem;padding:1.6rem 1.8rem;border-bottom:1px solid var(--border);align-items:start;transition:background 150ms}
+.bg-row:last-child{border-bottom:none}
+.bg-row:hover{background:var(--bg2)}
+.bg-period{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color:var(--muted);letter-spacing:0.02em;white-space:nowrap;line-height:1.7;padding-top:2px}
+.bg-role{font-family:'Syne',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);margin-bottom:5px;line-height:1.2}
+.bg-sub{font-family:'JetBrains Mono',monospace;font-size:0.63rem;color:var(--muted2);letter-spacing:0.02em;line-height:1.7}
+.bg-org{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color:var(--muted2);text-align:right;white-space:nowrap;padding-top:2px}
+.bg-type{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.14em;padding:3px 9px;border:1px solid var(--border2);border-radius:2px;color:var(--muted);margin-top:8px}
+.bg-type.edu{border-color:rgba(94,196,187,0.3);color:var(--cool)}
+.bg-type.work{border-color:rgba(108,99,255,0.3);color:var(--warm)}
 
-/* CONTACT */.contact-wrap{display;grid-template-columns:1fr 1fr;gap:1px;background(--border);border:1px solid var(--border);border-radius(--r);overflow}.contact-l{background(--bg2);padding:3.5rem}.contact-r{background(--bg3);padding:3.5rem;display;flex-direction;justify-content;align-items;gap:1.5rem;text-align;}.contact-h{font-family:'Syne',sans-serif;font-weight:800;font-size(2.25rem,4.5vw,3.5rem);line-height:0.92;letter-spacing:-0.035em;color(--text);margin-bottom:1.25rem}.contact-h em{font-style;color(--warm)}.contact-note{font-size:0.92rem;color(--muted2);line-height:1.9;max-width:38ch;margin-bottom:1.5rem}.contact-link-row{display;justify-content;align-items;padding:1rem 0;border-top:1px solid var(--border)}.contact-link-row{border-bottom:1px solid var(--border)}.contact-link-row span{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;color(--muted)}.contact-link-row span{font-size:0.82rem;color(--muted2);transition 130ms}.contact-link-row span{color(--cool)}.contact-r-tagline{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color(--text);line-height:1.35;max-width:30ch;}.contact-r-note{font-size:0.86rem;color(--muted2);line-height:1.75;max-width:30ch}.contact-r .cv-btn{width;justify-content;align-self;}
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.contact-l{background:var(--bg2);padding:3.5rem}
+.contact-r{background:var(--bg3);padding:3.5rem;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.5rem;text-align:center}
+.contact-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:0.92;letter-spacing:-0.035em;color:var(--text);margin-bottom:1.25rem}
+.contact-h em{font-style:normal;color:var(--warm)}
+.contact-note{font-size:0.92rem;color:var(--muted2);line-height:1.9;max-width:38ch;margin-bottom:1.5rem}
+.contact-link-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
+.contact-link-row:first-of-type{border-top:1px solid var(--border)}
+.contact-link-row span:first-child{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;color:var(--muted)}
+.contact-link-row span:last-child{font-size:0.82rem;color:var(--muted2);transition:color 130ms}
+.contact-link-row:hover span:last-child{color:var(--cool)}
+.contact-r-tagline{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);line-height:1.35;max-width:30ch}
+.contact-r-note{font-size:0.86rem;color:var(--muted2);line-height:1.75;max-width:30ch}
 
-/* FOOTER */footer{padding:1.5rem 0;border-top:1px solid var(--border)}.foot-i{display;justify-content;align-items}.foot-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color(--muted)}.foot-brand em{color(--warm);font-style}.foot-meta{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color(--muted);letter-spacing:0.08em}
+/* FOOTER */
+footer{padding:1.5rem 0;border-top:1px solid var(--border)}
+.foot-i{display:flex;justify-content:space-between;align-items:center}
+.foot-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--muted)}
+.foot-brand em{color:var(--warm);font-style:normal}
+.foot-meta{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted);letter-spacing:0.08em}
 
-/* REVEAL */.reveal{opacity:0;transform(22px);transition 600ms ease,transform 600ms ease}.reveal.in{opacity:1;transform}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 600ms ease,transform 600ms ease}
+.reveal.in{opacity:1;transform:translateY(0)}
 
-/* RESPONSIVE /@media(max-width:960px){.hero-bottom{grid-template-columns:1fr;gap:2rem}.hero-actions{align-items;flex-direction;flex-wrap;gap:1rem}.proj-grid.g3{grid-template-columns(2,1fr)}.bg-row{grid-template-columns:1fr 1fr;row-gap:0.5rem}.bg-org{text-align;grid-column:1/-1}.contact-wrap{grid-template-columns:1fr}}@media(max-width:580px){.nav-links{gap:1.25rem}.nav-dot{display}.proj-grid.g3,.proj-grid.g2{grid-template-columns:1fr}.proj-grid.g2 .proj-thumb{aspect-ratio:16/9}.stack-pill{padding:0 0.9rem;font-size:0.68rem}.contact-l,.contact-r{padding:2rem}.bg-row{grid-template-columns:1fr}}@media(prefers-reduced-motion){html{scroll-behavior},::before,::after{transition!important;animation!important}}</style>
-
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-bottom{grid-template-columns:1fr;gap:2rem}
+  .hero-actions{align-items:flex-start;flex-direction:row;flex-wrap:wrap;gap:1rem}
+  .proj-grid.g3{grid-template-columns:repeat(2,1fr)}
+  .bg-row{grid-template-columns:1fr 1fr;row-gap:0.5rem}
+  .bg-org{text-align:left;grid-column:1/-1}
+  .contact-wrap{grid-template-columns:1fr}
+}
+@media(max-width:580px){
+  .nav-links{gap:1.25rem}
+  .nav-dot{display:none}
+  .proj-grid.g3,.proj-grid.g2{grid-template-columns:1fr}
+  .proj-grid.g2 .proj-thumb{aspect-ratio:16/9}
+  .stack-pill{padding:0 0.9rem;font-size:0.68rem}
+  .contact-l,.contact-r{padding:2rem}
+  .bg-row{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
 </head>
 <body>
 
 <nav>
-<div class="w nav-i">
-<div class="nav-links">
-<a href="#projects">projects</a>
-<div class="nav-dot"></div>
-<a href="#background">background</a>
-<div class="nav-dot"></div>
-<a href="#contact">contact</a>
-</div>
-</div>
+  <div class="w nav-i">
+    <div class="nav-links">
+      <a href="#projects">projects</a>
+      <div class="nav-dot"></div>
+      <a href="#background">background</a>
+      <div class="nav-dot"></div>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
 </nav>
 
 <section class="hero">
-<div class="attn-grid" id="attnGrid" aria-hidden="true"></div>
-<div class="w hero-inner">
-<div class="hero-eyebrow">
-<div class="hero-eyebrow-line"></div>
-<span class="hero-eyebrow-text">APPLIED AI · ML RESEARCH · XAI · NLP</span>
-</div>
-<h1 class="hero-h1">
-<span class="l1">Shravani</span>
-<span class="l2">Mahadeshwar</span>
-</h1>
-<div class="hero-bottom">
-<p class="hero-desc">Building interpretable, trustworthy AI systems at the intersection of applied machine learning and research. Focused on explainability, NLP, and evaluation. Based in Frankfurt.</p>
-<div class="hero-actions">
-<a class="cv-btn" href="./CV.pdf" download>
-<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M5 7l3 3 3-3M3 12h10"/></svg>
-Download CV
-</a>
-<div class="hero-socials">
-<a class="h-social" href="https://github.com/Shravani018" target="_blank" rel="noreferrer">
-<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-GitHub
-</a>
-<a class="h-social" href="mailto:shravani._@outlook.com">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-Email
-</a>
-</div>
-</div>
-</div>
-</div>
+  <div class="attn-grid" id="attnGrid" aria-hidden="true"></div>
+  <div class="w hero-inner">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">APPLIED AI · ML RESEARCH · XAI · NLP</span>
+    </div>
+    <h1 class="hero-h1">
+      <span class="l1">Shravani</span>
+      <span class="l2">Mahadeshwar</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Building interpretable, trustworthy AI systems at the intersection of applied machine learning and research. Focused on explainability, NLP, and evaluation. Based in Frankfurt.</p>
+      <div class="hero-actions">
+        <a class="cv-btn" href="./CV.pdf" download>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M5 7l3 3 3-3M3 12h10"/></svg>
+          Download CV
+        </a>
+        <div class="hero-socials">
+          <a class="h-social" href="https://github.com/Shravani018" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a class="h-social" href="mailto:shravani._@outlook.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="stack">
-<div class="w">
-<div class="stack-i">
-<span class="stack-label">STACK</span>
-<div class="stack-pills">
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/python/EEEDF0" alt="">Python</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/r/EEEDF0" alt="">R</span>
-<span class="stack-pill">
-<svg class="stack-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="3.5"></ellipse><path d="M4.5 5.5v8.5c0 1.9 3.4 3.5 7.5 3.5s7.5-1.6 7.5-3.5V5.5"></path><path d="M4.5 10c0 1.9 3.4 3.5 7.5 3.5s7.5-1.6 7.5-3.5"></path></svg>
-SQL</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/apachespark/EEEDF0" alt="">Spark</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/powerbi/EEEDF0" alt="">Power BI</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/tableau/EEEDF0" alt="">Tableau</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/streamlit/EEEDF0" alt="">Streamlit</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/amazonwebservices/EEEDF0" alt="">AWS</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/docker/EEEDF0" alt="">Docker</span>
-<span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/n8n/EEEDF0" alt="">n8n</span>
-</div>
-</div>
-</div>
+  <div class="w">
+    <div class="stack-i">
+      <span class="stack-label">STACK</span>
+      <div class="stack-pills">
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/python/EEEDF0" alt="">Python</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/r/EEEDF0" alt="">R</span>
+        <span class="stack-pill">
+          <svg class="stack-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="3.5"></ellipse><path d="M4.5 5.5v8.5c0 1.9 3.4 3.5 7.5 3.5s7.5-1.6 7.5-3.5V5.5"></path><path d="M4.5 10c0 1.9 3.4 3.5 7.5 3.5s7.5-1.6 7.5-3.5"></path></svg>
+          SQL</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/apachespark/EEEDF0" alt="">Spark</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/powerbi/EEEDF0" alt="">Power BI</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/tableau/EEEDF0" alt="">Tableau</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/streamlit/EEEDF0" alt="">Streamlit</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/amazonwebservices/EEEDF0" alt="">AWS</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/docker/EEEDF0" alt="">Docker</span>
+        <span class="stack-pill"><img class="stack-icon" src="https://cdn.simpleicons.org/n8n/EEEDF0" alt="">n8n</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <section class="sec" id="projects">
-<div class="w">
-<div class="sec-head reveal">
-<div class="sec-eyebrow">PROJECT_COLLECTION</div>
-<p class="sec-desc">Analytics, machine learning, explainable AI, NLP, and applied AI research, with a focus on practical depth and thoughtful engineering.</p>
-</div>
+  <div class="w">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">PROJECT_COLLECTION</div>
+      <p class="sec-desc">Analytics, machine learning, explainable AI, NLP, and applied AI research, with a focus on practical depth and thoughtful engineering.</p>
+    </div>
 
-<div class="reveal">
-<div class="yr-block">
-<span class="yr-num">2026</span>
-<div class="yr-rule"></div>
-<span class="yr-count">5 projects</span>
-</div>
+    <div class="reveal">
+      <div class="yr-block">
+        <span class="yr-num">2026</span>
+        <div class="yr-rule"></div>
+        <span class="yr-count">5 projects</span>
+      </div>
 
-<div class="proj-grid g2" style="margin-bottom:1px">
-<a class="proj" href="https://github.com/Shravani018/interpreting-transformer-hallucinations" target="_blank" rel="noreferrer">
-<div class="proj-thumb">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/transformer.png" alt="Interpreting Transformer Hallucinations" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">INTERPRETABILITY · NLP</p>
-<p class="proj-name">Interpreting Transformer Hallucinations</p>
-<p class="proj-desc">Mechanistic analysis of GPT-Neo-125M that traces factual hallucinations through attention heads, residual stream geometry, and attribution circuits, revealing how incorrect outputs emerge inside transformer layers.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-<a class="proj" href="https://github.com/Shravani018/llm-audit-bench" target="_blank" rel="noreferrer">
-<div class="proj-thumb">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/audit.png" alt="LLM Audit Bench" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">EVALUATION · TRUST</p>
-<p class="proj-name">LLM Audit Bench</p>
-<p class="proj-desc">Modular evaluation framework benchmarking open-source language models across transparency, fairness, robustness, explainability, and privacy using a weighted trustworthiness scoring system.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-</div>
+      <div class="proj-grid g2" style="margin-bottom:1px">
+        <a class="proj" href="https://github.com/Shravani018/interpreting-transformer-hallucinations" target="_blank" rel="noreferrer">
+          <div class="proj-thumb">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/transformer.png" alt="Interpreting Transformer Hallucinations" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">INTERPRETABILITY · NLP</p>
+            <p class="proj-name">Interpreting Transformer Hallucinations</p>
+            <p class="proj-desc">Mechanistic analysis of GPT-Neo-125M that traces factual hallucinations through attention heads, residual stream geometry, and attribution circuits, revealing how incorrect outputs emerge inside transformer layers.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+        <a class="proj" href="https://github.com/Shravani018/llm-audit-bench" target="_blank" rel="noreferrer">
+          <div class="proj-thumb">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/audit.png" alt="LLM Audit Bench" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">EVALUATION · TRUST</p>
+            <p class="proj-name">LLM Audit Bench</p>
+            <p class="proj-desc">Modular evaluation framework benchmarking open-source language models across transparency, fairness, robustness, explainability, and privacy using a weighted trustworthiness scoring system.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+      </div>
 
-<div class="proj-grid g3">
-<a class="proj" href="https://github.com/Shravani018/rag-from-scratch" target="_blank" rel="noreferrer">
-<div class="proj-thumb" style="aspect-ratio:16/9">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/rag.png" alt="RAG From Scratch" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">RETRIEVAL · LLM</p>
-<p class="proj-name">RAG From Scratch</p>
-<p class="proj-desc">Retrieval-Augmented Generation pipeline implementing document ingestion, intelligent chunking, semantic embeddings, vector retrieval, and context-aware response generation through modular, end-to-end components.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-<a class="proj" href="https://github.com/Shravani018/hyg-stellar-viz" target="_blank" rel="noreferrer">
-<div class="proj-thumb" style="aspect-ratio:16/9">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/sky_heatmap.png" alt="HYG Stellar Viz" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">VISUALIZATION · DATA</p>
-<p class="proj-name">HYG Stellar Viz</p>
-<p class="proj-desc">Interactive visualization of the HYG Star Database using density mapping and celestial projections to explore the spatial distribution of more than 41,000 nearby stars.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-<a class="proj" href="https://github.com/Shravani018/uno_assignment5" target="_blank" rel="noreferrer">
-<div class="proj-thumb" style="aspect-ratio:16/9">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/uno.png" alt="UNO RL Bot" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">SOFTWARE DESIGN · RL</p>
-<p class="proj-name">UNO: RL Bot</p>
-<p class="proj-desc">Competitive UNO environment featuring rule-based, Monte Carlo Tree Search, and reinforcement learning agents with tournament benchmarking and an interactive Streamlit interface.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-</div>
-</div>
+      <div class="proj-grid g3">
+        <a class="proj" href="https://github.com/Shravani018/rag-from-scratch" target="_blank" rel="noreferrer">
+          <div class="proj-thumb" style="aspect-ratio:16/9">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/rag.png" alt="RAG From Scratch" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">RETRIEVAL · LLM</p>
+            <p class="proj-name">RAG From Scratch</p>
+            <p class="proj-desc">Retrieval-Augmented Generation pipeline implementing document ingestion, intelligent chunking, semantic embeddings, vector retrieval, and context-aware response generation through modular, end-to-end components.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+        <a class="proj" href="https://github.com/Shravani018/hyg-stellar-viz" target="_blank" rel="noreferrer">
+          <div class="proj-thumb" style="aspect-ratio:16/9">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/sky_heatmap.png" alt="HYG Stellar Viz" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">VISUALIZATION · DATA</p>
+            <p class="proj-name">HYG Stellar Viz</p>
+            <p class="proj-desc">Interactive visualization of the HYG Star Database using density mapping and celestial projections to explore the spatial distribution of more than 41,000 nearby stars.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+        <a class="proj" href="https://github.com/Shravani018/uno_assignment5" target="_blank" rel="noreferrer">
+          <div class="proj-thumb" style="aspect-ratio:16/9">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/uno.png" alt="UNO RL Bot" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">SOFTWARE DESIGN · RL</p>
+            <p class="proj-name">UNO: RL Bot</p>
+            <p class="proj-desc">Competitive UNO environment featuring rule-based, Monte Carlo Tree Search, and reinforcement learning agents with tournament benchmarking and an interactive Streamlit interface.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+      </div>
+    </div>
 
-<div class="reveal">
-<div class="yr-block">
-<span class="yr-num">2025</span>
-<div class="yr-rule"></div>
-<span class="yr-count">4 projects</span>
-</div>
-<div class="proj-grid g2">
-<a class="proj" href="https://github.com/Shravani018/xai-credit-risk-analysis" target="_blank" rel="noreferrer">
-<div class="proj-thumb">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/Demo.gif" alt="XAI Credit Risk Dashboard" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">XAI · CREDIT RISK</p>
-<p class="proj-name">XAI Credit Risk Analysis</p>
-<p class="proj-desc">Explainable credit risk prediction system combining Random Forest models with SHAP and LIME explanations in an interactive dashboard for transparent lending decisions.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-<a class="proj" href="https://github.com/Shravani018/deepfractals" target="_blank" rel="noreferrer">
-<div class="proj-thumb">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/deep.png" alt="Deep Fractals" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">GENERATIVE · COMPUTATION</p>
-<p class="proj-name">Deep Fractals</p>
-<p class="proj-desc">Explores how deep learning behaves through complex-plane fractal mathematics, revealing where optimization converges, diverges, and transitions between stable and chaotic regions.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-<a class="proj" href="https://github.com/Shravani018/Decoding-ESG-Measuring-Clarity-and-Greenwashing-in-Corporate-Disclosures" target="_blank" rel="noreferrer">
-<div class="proj-thumb">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/esg.png" alt="Decoding ESG" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">NLP · FINANCE</p>
-<p class="proj-name">Decoding ESG</p>
-<p class="proj-desc">NLP pipeline analyzing Apple and Tesla SEC filings to measure ESG disclosure clarity, consistency, and potential greenwashing trends across nearly a decade of corporate reporting.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-<a class="proj" href="https://github.com/Shravani018/tennis-elo-probabilistic-model" target="_blank" rel="noreferrer">
-<div class="proj-thumb">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/Streamlit_Demo.gif" alt="Tennis Elo Model" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">PROBABILISTIC MODELING</p>
-<p class="proj-name">Tennis Elo Model</p>
-<p class="proj-desc">Surface-aware Elo rating system with probabilistic match prediction and Monte Carlo tournament simulation for forecasting player performance across ATP events.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-</div>
-</div>
+    <div class="reveal">
+      <div class="yr-block">
+        <span class="yr-num">2025</span>
+        <div class="yr-rule"></div>
+        <span class="yr-count">4 projects</span>
+      </div>
+      <div class="proj-grid g2">
+        <a class="proj" href="https://github.com/Shravani018/xai-credit-risk-analysis" target="_blank" rel="noreferrer">
+          <div class="proj-thumb">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/Demo.gif" alt="XAI Credit Risk Dashboard" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">XAI · CREDIT RISK</p>
+            <p class="proj-name">XAI Credit Risk Analysis</p>
+            <p class="proj-desc">Explainable credit risk prediction system combining Random Forest models with SHAP and LIME explanations in an interactive dashboard for transparent lending decisions.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+        <a class="proj" href="https://github.com/Shravani018/deepfractals" target="_blank" rel="noreferrer">
+          <div class="proj-thumb">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/deep.png" alt="Deep Fractals" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">GENERATIVE · COMPUTATION</p>
+            <p class="proj-name">Deep Fractals</p>
+            <p class="proj-desc">Explores how deep learning behaves through complex-plane fractal mathematics, revealing where optimization converges, diverges, and transitions between stable and chaotic regions.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+        <a class="proj" href="https://github.com/Shravani018/Decoding-ESG-Measuring-Clarity-and-Greenwashing-in-Corporate-Disclosures" target="_blank" rel="noreferrer">
+          <div class="proj-thumb">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/esg.png" alt="Decoding ESG" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">NLP · FINANCE</p>
+            <p class="proj-name">Decoding ESG</p>
+            <p class="proj-desc">NLP pipeline analyzing Apple and Tesla SEC filings to measure ESG disclosure clarity, consistency, and potential greenwashing trends across nearly a decade of corporate reporting.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+        <a class="proj" href="https://github.com/Shravani018/tennis-elo-probabilistic-model" target="_blank" rel="noreferrer">
+          <div class="proj-thumb">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/Streamlit_Demo.gif" alt="Tennis Elo Model" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">PROBABILISTIC MODELING</p>
+            <p class="proj-name">Tennis Elo Model</p>
+            <p class="proj-desc">Surface-aware Elo rating system with probabilistic match prediction and Monte Carlo tournament simulation for forecasting player performance across ATP events.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+      </div>
+    </div>
 
-<div class="reveal">
-<div class="yr-block">
-<span class="yr-num">2023–2024</span>
-<div class="yr-rule"></div>
-<span class="yr-count">2 projects</span>
-</div>
-<div class="proj-grid g2">
-<a class="proj" href="https://github.com/jayesh15/applicant-tracking-system-nlp" target="_blank" rel="noreferrer">
-<div class="proj-thumb">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/ats.png" alt="Applicant Tracking System" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">2024 · NLP · RECRUITING</p>
-<p class="proj-name">Applicant Tracking System</p>
-<p class="proj-desc">Applicant screening and job-description matching using NLP with PDF/DOCX ingestion, keyword extraction, and similarity scoring in a Streamlit interface.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-<a class="proj" href="https://github.com/Shravani018/Python-And-Tableau" target="_blank" rel="noreferrer">
-<div class="proj-thumb" style="aspect-ratio:16/9">
-<span class="proj-thumb-ph">no_img</span>
-<img src="images/tableau.png" alt="Python and Tableau Analytics" loading="lazy" onerror="this.remove()">
-</div>
-<div class="proj-body">
-<p class="proj-cat">2023 · VISUALIZATION · ANALYTICS</p>
-<p class="proj-name">Python and Tableau Analytics</p>
-<p class="proj-desc">End-to-end analytics project combining Python preprocessing with Tableau dashboards to analyze BlogMe article sentiment, engagement patterns, and content performance.</p>
-</div>
-<div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
-</a>
-</div>
-</div>
+    <div class="reveal">
+      <div class="yr-block">
+        <span class="yr-num">2023–2024</span>
+        <div class="yr-rule"></div>
+        <span class="yr-count">2 projects</span>
+      </div>
+      <div class="proj-grid g2">
+        <a class="proj" href="https://github.com/jayesh15/applicant-tracking-system-nlp" target="_blank" rel="noreferrer">
+          <div class="proj-thumb">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/ats.png" alt="Applicant Tracking System" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">2024 · NLP · RECRUITING</p>
+            <p class="proj-name">Applicant Tracking System</p>
+            <p class="proj-desc">Applicant screening and job-description matching using NLP with PDF/DOCX ingestion, keyword extraction, and similarity scoring in a Streamlit interface.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+        <a class="proj" href="https://github.com/Shravani018/Python-And-Tableau" target="_blank" rel="noreferrer">
+          <div class="proj-thumb" style="aspect-ratio:16/9">
+            <span class="proj-thumb-ph">no_img</span>
+            <img src="images/tableau.png" alt="Python and Tableau Analytics" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="proj-body">
+            <p class="proj-cat">2023 · VISUALIZATION · ANALYTICS</p>
+            <p class="proj-name">Python and Tableau Analytics</p>
+            <p class="proj-desc">End-to-end analytics project combining Python preprocessing with Tableau dashboards to analyze BlogMe article sentiment, engagement patterns, and content performance.</p>
+          </div>
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></div>
+        </a>
+      </div>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <section class="sec" id="background">
-<div class="w">
-<div class="sec-head reveal">
-<div class="sec-eyebrow">BACKGROUND</div>
-<h2 class="sec-title">Education and Experience</h2>
-</div>
-<div class="bg-table reveal">
-<div class="bg-row">
-<span class="bg-period">Sep 2025 – Sep 2027</span>
-<div>
-<p class="bg-role">M.Sc. Applied Data Science</p>
-<p class="bg-sub">Machine Learning · Deep Learning · Databases · Cloud Computing</p>
-<p class="bg-sub">Grade 2.0 (DE scale)</p>
-<span class="bg-type edu">POSTGRADUATE</span>
-</div>
-<span class="bg-org">Frankfurt School of Finance<br>and Management</span>
-</div>
-<div class="bg-row">
-<span class="bg-period">Sep 2021 – Mar 2024</span>
-<div>
-<p class="bg-role">B.Sc. Data Science and Business Analytics</p>
-<p class="bg-sub">Time Series Analysis · NLP · Computer Vision</p>
-<p class="bg-sub">Grade 9.52 / 10.00</p>
-<span class="bg-type edu">UNDERGRADUATE</span>
-</div>
-<span class="bg-org">University of Mumbai</span>
-</div>
-<div class="bg-row">
-<span class="bg-period">Sep 2023 – Feb 2024<br>Jun 2024 – Jan 2025</span>
-<div>
-<p class="bg-role">Data Science Intern</p>
-<p class="bg-role" style="margin-top:4px">Junior Data and Business Analyst</p>
-<p class="bg-sub" style="margin-top:6px">Analytics, reporting, automation, and data-driven decision-making</p>
-<span class="bg-type work">FINANCIAL SERVICES</span>
-</div>
-<span class="bg-org">Financial Services</span>
-</div>
-</div>
-</div>
+  <div class="w">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">BACKGROUND</div>
+      <h2 class="sec-title">Education and Experience</h2>
+    </div>
+    <div class="bg-table reveal">
+      <div class="bg-row">
+        <span class="bg-period">Sep 2025 – Sep 2027</span>
+        <div>
+          <p class="bg-role">M.Sc. Applied Data Science</p>
+          <p class="bg-sub">Machine Learning · Deep Learning · Databases · Cloud Computing</p>
+          <p class="bg-sub">Grade 2.0 (DE scale)</p>
+          <span class="bg-type edu">POSTGRADUATE</span>
+        </div>
+        <span class="bg-org">Frankfurt School of Finance<br>and Management</span>
+      </div>
+      <div class="bg-row">
+        <span class="bg-period">Sep 2021 – Mar 2024</span>
+        <div>
+          <p class="bg-role">B.Sc. Data Science and Business Analytics</p>
+          <p class="bg-sub">Time Series Analysis · NLP · Computer Vision</p>
+          <p class="bg-sub">Grade 9.52 / 10.00</p>
+          <span class="bg-type edu">UNDERGRADUATE</span>
+        </div>
+        <span class="bg-org">University of Mumbai</span>
+      </div>
+      <div class="bg-row">
+        <span class="bg-period">Sep 2023 – Feb 2024<br>Jun 2024 – Jan 2025</span>
+        <div>
+          <p class="bg-role">Data Science Intern</p>
+          <p class="bg-role" style="margin-top:4px">Junior Data and Business Analyst</p>
+          <p class="bg-sub" style="margin-top:6px">Analytics, reporting, automation, and data-driven decision-making</p>
+          <span class="bg-type work">FINANCIAL SERVICES</span>
+        </div>
+        <span class="bg-org">Financial Services</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="sec" id="contact" style="border-bottom:none">
-<div class="w">
-<div class="sec-head reveal">
-<div class="sec-eyebrow">CONTACT</div>
-<h2 class="sec-title">Get in Touch</h2>
-</div>
-<div class="contact-wrap reveal">
-<div class="contact-l">
-<h2 class="contact-h">Let's<br>work<br><em>together.</em></h2>
-<p class="contact-note">Based in Frankfurt, open to internships, research collaborations, and opportunities in machine learning.</p>
-<a class="contact-link-row" href="mailto:shravani._@outlook.com" style="display:flex">
-<span>EMAIL</span><span>shravani._@outlook.com</span>
-</a>
-<a class="contact-link-row" href="https://github.com/Shravani018" target="_blank" rel="noreferrer" style="display:flex">
-<span>GITHUB</span><span>github.com/Shravani018</span>
-</a>
-</div>
-<div class="contact-r">
-<p class="contact-r-tagline">Download the full CV for education, experience, and selected projects.</p>
-<a class="cv-btn" href="./CV.pdf" download>
-<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M5 7l3 3 3-3M3 12h10"/></svg>
-Download CV
-</a>
-</div>
-</div>
-</div>
+  <div class="w">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">CONTACT</div>
+      <h2 class="sec-title">Get in Touch</h2>
+    </div>
+    <div class="contact-wrap reveal">
+      <div class="contact-l">
+        <h2 class="contact-h">Let's<br>work<br><em>together.</em></h2>
+        <p class="contact-note">Based in Frankfurt, open to internships, research collaborations, and opportunities in machine learning.</p>
+        <a class="contact-link-row" href="mailto:shravani._@outlook.com" style="display:flex">
+          <span>EMAIL</span><span>shravani._@outlook.com</span>
+        </a>
+        <a class="contact-link-row" href="https://github.com/Shravani018" target="_blank" rel="noreferrer" style="display:flex">
+          <span>GITHUB</span><span>github.com/Shravani018</span>
+        </a>
+      </div>
+      <div class="contact-r">
+        <p class="contact-r-tagline">Download the full CV for education, experience, and selected projects.</p>
+        <a class="cv-btn" href="./CV.pdf" download>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M5 7l3 3 3-3M3 12h10"/></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<footer>
+  <div class="w foot-i">
+    <span class="foot-brand">Shravani <em>Mahadeshwar</em></span>
+    <span class="foot-meta">© 2026 · FRANKFURT, DE</span>
+  </div>
+</footer>
 
 <script>
 (function(){
-const grid=document.getElementById('attnGrid');
-if(!grid)return;
-const total=22*12;
-const frag=document.createDocumentFragment();
-for(let i=0;i<total;i++){
-const d=document.createElement('div');
-d.className='attn-cell';
-const v=Math.random()<0.12?Math.random()*0.22+0.05:Math.random()*0.032;
-d.style.opacity=v.toFixed(3);
-frag.appendChild(d);
-}
-grid.appendChild(frag);
-requestAnimationFrame(()=>requestAnimationFrame(()=>grid.classList.add('loaded')));
+  const grid=document.getElementById('attnGrid');
+  if(!grid)return;
+  const total=22*12;
+  const frag=document.createDocumentFragment();
+  for(let i=0;i<total;i++){
+    const d=document.createElement('div');
+    d.className='attn-cell';
+    const v=Math.random()<0.12?Math.random()*0.22+0.05:Math.random()*0.032;
+    d.style.opacity=v.toFixed(3);
+    frag.appendChild(d);
+  }
+  grid.appendChild(frag);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>grid.classList.add('loaded')));
 })();
 
 const io=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
 },{threshold:0.06,rootMargin:'0px 0px -32px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 const secs=document.querySelectorAll('section[id]');
 const links=document.querySelectorAll('.nav-links a');
 const navIO=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){
-links.forEach(l=>l.style.color='');
-const l=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-if(l)l.style.color='var(--text)';
-}
-});
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(l=>l.style.color='');
+      const l=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if(l)l.style.color='var(--text)';
+    }
+  });
 },{rootMargin:'-30% 0px -60% 0px'});
 secs.forEach(s=>navIO.observe(s));
 </script>
