@@ -76,7 +76,7 @@ nav{position:sticky;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.
 /* SECTIONS */
 .sec{padding:96px 0;border-bottom:1px solid var(--border)}
 .sec-head{margin-bottom:60px;text-align:center}
-.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cool);letter-spacing:0.2em;margin-bottom:0.85rem;display:flex;align-items:center;justify-content:center;gap:0.55rem;opacity:0.95;font-weight:500}
+.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.95rem;color:var(--cool);letter-spacing:0.2em;margin-bottom:0.85rem;display:flex;align-items:center;justify-content:center;gap:0.55rem;opacity:0.95;font-weight:500}
 .sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.75rem,3.5vw,2.75rem);letter-spacing:-0.02em;color:var(--text);line-height:1.05;margin-bottom:0.75rem}
 .sec-desc{font-size:1.02rem;color:var(--muted2);line-height:1.95;max-width:60ch;margin:0 auto}
 
@@ -525,5 +525,6 @@ const navIO=new IntersectionObserver(entries=>{
 },{rootMargin:'-30% 0px -60% 0px'});
 secs.forEach(s=>navIO.observe(s));
 </script>
+
 </body>
 </html>
