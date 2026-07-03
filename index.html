@@ -129,7 +129,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 /* CONTACT */
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
 .contact-l{background:var(--bg2);padding:3.5rem}
-.contact-r{background:var(--bg3);padding:3.5rem;display:flex;flex-direction:column;justify-content:flex-start;gap:1.5rem}
+.contact-r{
+background:var(--bg3);
+padding:3.5rem;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:1.5rem;
+text-align:center;
+}
 .contact-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:0.92;letter-spacing:-0.035em;color:var(--text);margin-bottom:1.25rem}
 .contact-h em{font-style:normal;color:var(--warm)}
 .contact-note{font-size:0.92rem;color:var(--muted2);line-height:1.9;max-width:38ch;margin-bottom:1.5rem}
@@ -138,8 +147,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.9
 .contact-link-row span:first-child{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;color:var(--muted)}
 .contact-link-row span:last-child{font-size:0.82rem;color:var(--muted2);transition:color 130ms}
 .contact-link-row:hover span:last-child{color:var(--cool)}
-.contact-r-tagline{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);line-height:1.35}
+.contact-r-tagline{
+font-family:'Syne',sans-serif;
+font-weight:700;
+font-size:1.1rem;
+color:var(--text);
+line-height:1.35;
+max-width:30ch;
+}
 .contact-r-note{font-size:0.86rem;color:var(--muted2);line-height:1.75;max-width:30ch}
+.contact-r .cv-btn{
+width:fit-content;
+justify-content:center;
+align-self:center;
+}
 
 /* FOOTER */
 footer{padding:1.5rem 0;border-top:1px solid var(--border)}
@@ -350,7 +371,7 @@ SQL</span>
 <a class="proj" href="https://github.com/Shravani018/deepfractals" target="_blank" rel="noreferrer">
 <div class="proj-thumb">
 <span class="proj-thumb-ph">no_img</span>
-<img src="images/deep.png" alt="Deep Fractals" loading="lazy" onerror="this.remove()">
+<img src="images/deepfractals.png" alt="Deep Fractals" loading="lazy" onerror="this.remove()">
 </div>
 <div class="proj-body">
 <p class="proj-cat">GENERATIVE · COMPUTATION</p>
@@ -492,12 +513,6 @@ Download CV
 </div>
 </section>
 
-<footer>
-<div class="w foot-i">
-<span class="foot-brand">Shravani Mahadeshwar<em>.</em></span>
-<span class="foot-meta">applied data science · frankfurt · 2026</span>
-</div>
-</footer>
 
 <script>
 (function(){
