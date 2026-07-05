@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0B0C10">
 <title>Shravani | Applied Data Science</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
   --max:1160px;
   --r:4px;
 }
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
@@ -32,20 +32,22 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
 /* NAV */
 nav{position:sticky;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
-.nav-i{height:56px;display:flex;align-items:center;justify-content:center}
-.nav-links{display:flex;gap:2.25rem;align-items:center}
-.nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.05em;transition:color 130ms}
+.nav-i{height:56px;display:flex;align-items:center;justify-content:center;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav-i::-webkit-scrollbar{display:none}
+.nav-links{display:flex;gap:2.25rem;align-items:center;white-space:nowrap}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.05em;transition:color 130ms;padding:0.4rem 0}
 .nav-links a:hover{color:var(--text)}
-.nav-dot{width:4px;height:4px;border-radius:50%;background:var(--border2)}
+.nav-dot{width:4px;height:4px;border-radius:50%;background:var(--border2);flex-shrink:0}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:110px 0 72px;position:relative;overflow:hidden}
+@supports (height: 100svh){.hero{min-height:100svh}}
 .attn-grid{position:absolute;inset:0;display:grid;pointer-events:none;z-index:0;opacity:0;transition:opacity 1200ms ease;grid-template-columns:repeat(22,1fr);grid-template-rows:repeat(12,1fr);gap:2px;padding:1px}
 .attn-grid.loaded{opacity:1}
 .attn-cell{border-radius:1px;background:var(--cool)}
 .hero-inner{position:relative;z-index:1}
 .hero-eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:3rem}
-.hero-eyebrow-line{width:28px;height:1px;background:var(--cool);opacity:0.5}
+.hero-eyebrow-line{width:28px;height:1px;background:var(--cool);opacity:0.5;flex-shrink:0}
 .hero-eyebrow-text{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--cool);letter-spacing:0.14em;opacity:0.9}
 
 .hero-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5.5rem);line-height:1;letter-spacing:-0.03em;margin-bottom:3.5rem}
@@ -66,7 +68,7 @@ nav{position:sticky;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.
 
 /* STACK */
 .stack{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
-.stack-i{display:flex;align-items:center;min-height:56px}
+.stack-i{display:flex;align-items:center;min-height:56px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .stack-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--warm);letter-spacing:0.22em;display:flex;align-items:center;padding:0 1.75rem;border-right:1px solid var(--border);white-space:nowrap;flex-shrink:0;background:rgba(108,99,255,0.06)}
 .stack-pills{display:flex;flex-wrap:wrap;align-items:center}
 .stack-pill{font-family:'JetBrains Mono',monospace;font-size:0.76rem;font-weight:500;color:var(--text);letter-spacing:0.03em;padding:0 1.15rem;border-right:1px solid var(--border);height:56px;display:flex;align-items:center;gap:0.55rem;transition:color 130ms,background 130ms;white-space:nowrap}
@@ -129,17 +131,17 @@ nav{position:sticky;top:0;left:0;right:0;z-index:200;background:rgba(11,12,16,0.
 .contact-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:0.92;letter-spacing:-0.035em;color:var(--text);margin-bottom:1.25rem}
 .contact-h em{font-style:normal;color:var(--warm)}
 .contact-note{font-size:0.92rem;color:var(--muted2);line-height:1.9;max-width:38ch;margin-bottom:1.5rem}
-.contact-link-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
+.contact-link-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border);gap:1rem}
 .contact-link-row:first-of-type{border-top:1px solid var(--border)}
-.contact-link-row span:first-child{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;color:var(--muted)}
-.contact-link-row span:last-child{font-size:0.82rem;color:var(--muted2);transition:color 130ms}
+.contact-link-row span:first-child{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;color:var(--muted);flex-shrink:0}
+.contact-link-row span:last-child{font-size:0.82rem;color:var(--muted2);transition:color 130ms;overflow-wrap:anywhere;text-align:right}
 .contact-link-row:hover span:last-child{color:var(--cool)}
 .contact-r-tagline{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);line-height:1.35;max-width:30ch}
 .contact-r-note{font-size:0.86rem;color:var(--muted2);line-height:1.75;max-width:30ch}
 
 /* FOOTER */
 footer{padding:1.5rem 0;border-top:1px solid var(--border)}
-.foot-i{display:flex;justify-content:space-between;align-items:center}
+.foot-i{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
 .foot-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--muted)}
 .foot-brand em{color:var(--warm);font-style:normal}
 .foot-meta{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--muted);letter-spacing:0.08em}
@@ -148,7 +150,7 @@ footer{padding:1.5rem 0;border-top:1px solid var(--border)}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity 600ms ease,transform 600ms ease}
 .reveal.in{opacity:1;transform:translateY(0)}
 
-/* RESPONSIVE */
+/* RESPONSIVE : tablet and below */
 @media(max-width:960px){
   .hero-bottom{grid-template-columns:1fr;gap:2rem}
   .hero-actions{align-items:stretch;width:100%;max-width:320px}
@@ -157,15 +159,47 @@ footer{padding:1.5rem 0;border-top:1px solid var(--border)}
   .bg-org{text-align:left;grid-column:1/-1}
   .contact-wrap{grid-template-columns:1fr}
 }
+
+/* RESPONSIVE : phones */
 @media(max-width:580px){
+  .w{width:min(var(--max),calc(100% - 32px))}
+  .hero{padding:96px 0 56px}
+  .hero-h1{margin-bottom:2.5rem}
+  .hero-eyebrow{margin-bottom:2rem}
   .nav-links{gap:1.25rem}
   .nav-dot{display:none}
+  .sec{padding:64px 0}
+  .sec-head{margin-bottom:40px}
   .proj-grid.g3,.proj-grid.g2{grid-template-columns:1fr}
-  .proj-grid.g2 .proj-thumb{aspect-ratio:16/9}
+  .proj-grid.g2 .proj-thumb,.proj-grid.g1 .proj-thumb{aspect-ratio:16/9}
   .stack-pill{padding:0 0.9rem;font-size:0.68rem}
   .contact-l,.contact-r{padding:2rem}
-  .bg-row{grid-template-columns:1fr}
+  .contact-link-row{flex-direction:column;align-items:flex-start;gap:0.25rem}
+  .contact-link-row span:last-child{text-align:left}
+  .bg-row{grid-template-columns:1fr;padding:1.3rem 1.4rem}
+  .bg-period{white-space:normal}
+  .foot-i{flex-direction:column;align-items:flex-start}
 }
+
+/* RESPONSIVE : small phones */
+@media(max-width:400px){
+  .w{width:min(var(--max),calc(100% - 24px))}
+  .hero{padding:88px 0 48px}
+  .hero-eyebrow{gap:0.5rem}
+  .hero-eyebrow-text{font-size:0.6rem;letter-spacing:0.1em}
+  .hero-h1{font-size:clamp(2.1rem,10vw,3.2rem)}
+  .hero-desc{font-size:0.92rem;max-width:100%}
+  .hero-actions{width:100%;max-width:100%}
+  .hero-socials{flex-direction:column}
+  .stack-label{padding:0 1.1rem;font-size:0.55rem}
+  .stack-pill{padding:0 0.7rem;font-size:0.64rem;height:48px}
+  .stack-i{min-height:48px}
+  .sec-eyebrow{font-size:0.8rem}
+  .sec-title{font-size:clamp(1.5rem,7vw,2rem)}
+  .contact-l,.contact-r{padding:1.5rem}
+  .contact-h{font-size:clamp(1.9rem,10vw,2.6rem)}
+}
+
 @media(prefers-reduced-motion){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -526,6 +560,5 @@ const navIO=new IntersectionObserver(entries=>{
 },{rootMargin:'-30% 0px -60% 0px'});
 secs.forEach(s=>navIO.observe(s));
 </script>
-
 </body>
 </html>
